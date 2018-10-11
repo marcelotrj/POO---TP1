@@ -1,38 +1,36 @@
-#include "audioBook.h"
-// Implementacao dos metodos da classe audioBook
-AudioBook::AudioBook(const float& m_duracao, const string& m_formatoAudio) : duracao(m_duracao) , formatoAudio(m_formatoAudio) {}
-
-AudioBook::~AudioBook() {}
-
-float AudioBook::getDuracao()
+#include "eletronico.h"
+Eletronico::Eletronico(const string& m_url, const string& m_formatoArquivo): url(m_url), formatoArquivo(m_formatoArquivo) {} // Construtor
+Eletronico::~Eletronico() {}
+string Eletronico::getUrl()
 {
-  return duracao;
+	return url;
 }
-string AudioBook::getFormatoAudio()
+string Eletronico::getFormatoArquivo()
 {
-	return formatoAudio;
+	return formatoArquivo;
 }
-void AudioBook::setDuracao(const float& m_duracao)
+void Eletronico::setUrl(const string& m_url)
 {
-	duracao = m_duracao;
+	url = m_url;
 }
-void AudioBook::setFormatoArquivo(const string& m_formatoAudio)
+void Eletronico::setFormatoArquivo(const string& m_formatoArquivo)
 {
-	formatoAudio = m_formatoAudio;
+	formatoArquivo = m_formatoArquivo;
 }
 // Sobrecarga do operator cout
-ostream& operator << (ostream& out, const AudioBook& audioBook)
+ostream& operator <<(ostream& out, const Eletronico& eletronico)
 {
 	out << "----------------------------------------------------------------------------" << '\n';
-	out << "Formato do arquivo: " << audioBook.formatoAudio << '\n';
-	out << " Duracao:  " << audioBook.duracao << '\n';
+	out << "URL: " << eletronico.url << '\n'
+		  << "Formato do Arquivo: " << eletronico.formatoArquivo << '\n';
 } // Fim da Sobrecarga do operator <<
-
 // Sobrecarga do operator cin
-istream& operator >> (istream& in, AudioBook& audioBook)
+istream& operator >> (istream& in, Eletronico& eletronico)
 {
 	in.clear();
 	in.ignore(45 , '\n');
-	in >> audioBook.duracao;
-	getline(in, audioBook.formatoAudio);
+	// Insercao do dado url da classe
+	getline(in, eletronico.url);
+	// Insercao do dado formatoArquivo da classe
+	getline(in, eletronico.formatoArquivo);
 } // Fim da Sobrecarga do operator >>

@@ -22,9 +22,13 @@ void Impresso::setColunas(const int& m_colunas)
 ostream& operator <<(ostream& out, const Impresso& impresso)
 {
   out << "----------------------------------------------------------------------------" << '\n';
-  out << " Escritor(res): "; for (string it : impresso.livrarias){
-  	out << it << " " << endl;
-  }
+  out << " Livraria(s): ";
+  if (impresso.livrarias.size() > 0) { // caso nao acha a livraria cadastrada
+    for (string it : impresso.livrarias){
+    	out << it << " " << endl;
+    }
+  }else
+    out << "Nenhuma" << endl;
   out << " Titulo:  " << impresso.colunas << '\n';
 } // Fim da Sobrecarga do operator <<
 // Sobrecarga do operator cin
