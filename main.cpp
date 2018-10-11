@@ -11,16 +11,20 @@
 #include <map> // definicao do template de classe map
 #include <stdio.h>
 #include <stdlib.h>
-#include <limits>
+#include <stdexcept> 	// Standard exception objects
 #include <vector> // vector
 #include <iostream> // cin, cout, endl
+using std::vector;
+using std::cout;
+using std::cin;
+using std::endl;
 #include <cstring> // strcpy , strlen, strcmp, getline
-using namespace std;
+using std::string;
+using std::getline;
 
-int main(int argc, char const *argv[])
-{
-	setlocale (LC_ALL, "Portuguese");
-	cout << "Bem vindo a essa buceta!!  " << '\n';
+int main(int argc, char const *argv[]) {
+  setlocale (LC_ALL, "Portuguese");
+  cout << "Bem vindo a essa buceta!!  " << '\n';
 
-	return 0;
+  return 0;
 }
