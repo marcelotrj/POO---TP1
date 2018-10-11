@@ -2,20 +2,25 @@
 Impresso::Impresso(){}
 Impresso::~Impresso(){}
 
-vector<string> Impresso::getLivrarias(){
+vector<string> Impresso::getLivrarias()
+{
   return livrarias;
 }
-int Impresso::getColunas(){
+int Impresso::getColunas()
+{
   return colunas;
 }
-void Impresso::setLivrarias(std::vector<string> m_Livrarias){
+void Impresso::setLivrarias(std::vector<string> m_Livrarias)
+{
   livrarias = m_Livrarias;
 }
-void Impresso::setColunas(const int& m_colunas){
+void Impresso::setColunas(const int& m_colunas)
+{
   colunas = m_colunas;
 }
 // Sobrecarga do operator cout
-ostream& operator <<(ostream& out, const Impresso& impresso){
+ostream& operator <<(ostream& out, const Impresso& impresso)
+{
   out << "----------------------------------------------------------------------------" << '\n';
   out << " Escritor(res): "; for (string it : impresso.livrarias){
   	out << it << " " << endl;
@@ -23,7 +28,8 @@ ostream& operator <<(ostream& out, const Impresso& impresso){
   out << " Titulo:  " << impresso.colunas << '\n';
 } // Fim da Sobrecarga do operator <<
 // Sobrecarga do operator cin
-istream& operator >> (istream& in, Impresso& impresso){
+istream& operator >> (istream& in, Impresso& impresso)
+{
   in.clear();
   in.ignore(45 , '\n');
   // Preenchendo os livrarias, caso seja mais de um
