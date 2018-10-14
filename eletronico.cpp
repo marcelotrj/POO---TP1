@@ -18,7 +18,7 @@ void Eletronico::setFormatoArquivo(const string& m_formatoArquivo)
 	formatoArquivo = m_formatoArquivo;
 }
 // Sobrecarga do operator cout
-ostream& operator <<(ostream& out, const Eletronico& eletronico)
+ostream& operator << (ostream& out, const Eletronico& eletronico)
 {
 	out << "----------------------------------------------------------------------------" << '\n';
 	out << "URL: " << eletronico.url << '\n'
